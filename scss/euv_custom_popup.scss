@@ -1,0 +1,52 @@
+.euv-get-scrollbar-width {
+    visibility: hidden;
+    overflow: scroll;
+    position: absolute;
+    bottom: 0;
+}
+
+.euv-custom-popup {
+    $parent: &;
+    display: none;
+    &.active {
+        display: block;
+        #{$parent}__bg {
+            display: block;
+        }
+    }
+    &__fixed {
+        left: 0;
+        right: 0;
+        top: 0;
+        position: fixed;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 15px;
+        overflow: hidden;
+        width: 100%;
+        z-index: 101;
+        box-sizing: border-box;
+    }
+    &__scroll {
+        width: 100%;
+        height: 100vh;
+        padding-right: 100vw;
+        overflow-y: scroll;
+        box-sizing: content-box;
+    }
+    &__content {
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+    &__bg {
+        display: none;
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        background-color: #000000;
+        opacity: 0.42;
+        top: 0;
+        left: 0;
+        z-index: 100;
+    }
+}
