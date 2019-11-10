@@ -8,6 +8,10 @@
 .euv-custom-popup {
     $parent: &;
     display: none;
+
+    /* Когда к попапу добавляется класс active, его display становится block, это может повлиять на отображение того места, где он находился. Поэтому делаем position: absolute; */
+    position: absolute;
+
     &.active {
         display: block;
         #{$parent}__bg {

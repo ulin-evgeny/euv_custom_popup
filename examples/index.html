@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>euv_custom_popup</title>
+  <!-- styles -->
+  <link rel="stylesheet" href="../css/euv_custom_popup.css" type="text/css">
+  <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body>
+
+<div class="container">
+  <h1>euv_custom_popup v1.0.0</h1>
+  <p>
+    <a href="https://github.com/ulin-evgeny/">https://github.com/ulin-evgeny/</a>
+  </p>
+  <p>
+    Плагин для вызова кроссбраузерного, адаптивного, стилизованного попапа, размещенного по середине экрана (с учетом скроллбаров различных браузеров), который можно скроллить.
+  </p>
+  <p>Тестировался в браузерах: IE11, Edge 44, Google Chrome 78, Opera 64, FF 70.</p>
+
+  <a class="open-simple-popup" href="#">Попап без reset_on_close</a>
+  <div class="simple-popup popup">
+    <p class="simple-popup__text">
+      Обычный попап, содержимое которого не сбрасывается после закрытия. Подойдет для вызова какого-нибудь статического контента.
+    </p>
+    <a class="simple-popup__close-btn button" href="#">Закрыть</a>
+    <a class="simple-popup__action-btn button" href="#">Случайный цвет</a>
+  </div>
+
+  <br>
+
+  <a class="open-clone-popup" href="#">Попап c reset_on_close: 'clone'</a>
+  <div class="clone-popup popup">
+    <p class="clone-popup__text">
+      Попап, содержимое которого сбрасывается за счет JQuery-функции clone.
+      <br>
+      Здесь может быть проблема: если в обработчиках используется переменная, которая была установлена до вызова попапа, код с ней будет работать только при первом вызове, так как элемента, на который ссылается переменная, в последующих вызовах существовать не будет.
+      <br>
+      Пример - кнопка "Случайный цвет". При первом открытии попапа она работать будет, при последующих - нет.
+    </p>
+    <a class="clone-popup__close-btn button" href="#">Закрыть</a>
+    <a class="clone-popup__action-btn button" href="#">Случайный цвет</a>
+  </div>
+
+  <br>
+
+  <a class="open-html-popup" href="#">Попап c reset_on_close: 'html'</a>
+  <div class="html-popup popup">
+    <p class="html-popup__text">
+      Попап, содержимое которого сбрасывается за счет JQuery-функции html. Для того, чтобы повесить обработчики, рекомендуется использовать callback-функцию при вызове попапа (тогда пользователь не увидит изменение содержимого попапа, т.к. функция вызывается до показа попапа).
+      <br>
+      Данный вариант лучше всего подходит для попапа, содержимое которого будет меняться (здесь нет таких проблем, которые есть в clone).
+    </p>
+    <a class="html-popup__close-btn button" href="#">Закрыть</a>
+    <a class="html-popup__action-btn button" href="#">Случайный цвет</a>
+  </div>
+</div>
+
+<!-- scripts -->
+<script src="jquery/jquery.js"></script>
+<script src="../js/euv_custom_popup.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

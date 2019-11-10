@@ -49,8 +49,19 @@
         // По горизонтали.
         // Проблема в том, что с помощью box-sizing: content-box и правого padding'а в некоторых браузерах нельзя скрыть скроллбар. Точнее, можно. Но вот место под него все равно останется. Из-за чего попап будет расположен не четко посередине по горизонтали, а левее.
         // ---------------------------------------
-        // Получаем размер скроллбара. Это делать надо ПОСТОЯННО, т.к. при изменении размеров экрана размер скроллбара меняется тоже.
-        let scrollbar_size = window.innerWidth - $('body').width();
+        // Получаем размер скроллбара. Это делать надо ПОСТОЯННО, т.к. при изменении размеров экрана размер скроллбара меняется тоже. Для корректного получения размеров нужно, чтобы margin, padding и border у тега html были равны 0.
+        let $html = $('html');
+        $this.data(plugin_name).html_style = {};
+        $this.data(plugin_name).html_style.margin = $html.css('margin');
+        $this.data(plugin_name).html_style.padding = $html.css('padding');
+        $this.data(plugin_name).html_style.border = $html.css('border');
+        $html.css('margin', 0);
+        $html.css('padding', 0);
+        $html.css('border', 0);
+        let scrollbar_size = window.innerWidth - $html.width();
+        $html.css('margin', $this.data(plugin_name).html_style.margin);
+        $html.css('padding', $this.data(plugin_name).html_style.padding);
+        $html.css('border', $this.data(plugin_name).html_style.border);
 
         // Сбрасываем margin-right до того, как применить новый - чтобы расчеты были правильными
         $this.css('margin-right', 0);

@@ -9,16 +9,17 @@
 /* line 8, ../scss/euv_custom_popup.scss */
 .euv-custom-popup {
   display: none;
+  position: absolute;
 }
-/* line 11, ../scss/euv_custom_popup.scss */
+/* line 12, ../scss/euv_custom_popup.scss */
 .euv-custom-popup.active {
   display: block;
 }
-/* line 13, ../scss/euv_custom_popup.scss */
+/* line 14, ../scss/euv_custom_popup.scss */
 .euv-custom-popup.active .euv-custom-popup__bg {
   display: block;
 }
-/* line 17, ../scss/euv_custom_popup.scss */
+/* line 18, ../scss/euv_custom_popup.scss */
 .euv-custom-popup__fixed {
   left: 0;
   right: 0;
@@ -32,7 +33,7 @@
   z-index: 101;
   box-sizing: border-box;
 }
-/* line 30, ../scss/euv_custom_popup.scss */
+/* line 31, ../scss/euv_custom_popup.scss */
 .euv-custom-popup__scroll {
   width: 100%;
   height: 100vh;
@@ -40,12 +41,12 @@
   overflow-y: scroll;
   box-sizing: content-box;
 }
-/* line 37, ../scss/euv_custom_popup.scss */
+/* line 38, ../scss/euv_custom_popup.scss */
 .euv-custom-popup__content {
   margin-bottom: 20px;
   margin-top: 20px;
 }
-/* line 41, ../scss/euv_custom_popup.scss */
+/* line 42, ../scss/euv_custom_popup.scss */
 .euv-custom-popup__bg {
   display: none;
   width: 100vw;
