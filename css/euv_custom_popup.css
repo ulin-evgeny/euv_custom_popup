@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* line 1, ../scss/euv_custom_popup.scss */
 .euv-get-scrollbar-width {
   visibility: hidden;
@@ -9,17 +10,18 @@
 /* line 8, ../scss/euv_custom_popup.scss */
 .euv-custom-popup {
   display: none;
+  /* Когда к попапу добавляется класс active, его display становится block, это может повлиять на отображение того места, где он находился. Поэтому делаем position: absolute; */
   position: absolute;
 }
-/* line 12, ../scss/euv_custom_popup.scss */
+/* line 15, ../scss/euv_custom_popup.scss */
 .euv-custom-popup.active {
   display: block;
 }
-/* line 14, ../scss/euv_custom_popup.scss */
+/* line 17, ../scss/euv_custom_popup.scss */
 .euv-custom-popup.active .euv-custom-popup__bg {
   display: block;
 }
-/* line 18, ../scss/euv_custom_popup.scss */
+/* line 21, ../scss/euv_custom_popup.scss */
 .euv-custom-popup__fixed {
   left: 0;
   right: 0;
@@ -33,7 +35,7 @@
   z-index: 101;
   box-sizing: border-box;
 }
-/* line 31, ../scss/euv_custom_popup.scss */
+/* line 34, ../scss/euv_custom_popup.scss */
 .euv-custom-popup__scroll {
   width: 100%;
   height: 100vh;
@@ -41,12 +43,12 @@
   overflow-y: scroll;
   box-sizing: content-box;
 }
-/* line 38, ../scss/euv_custom_popup.scss */
+/* line 41, ../scss/euv_custom_popup.scss */
 .euv-custom-popup__content {
   margin-bottom: 20px;
   margin-top: 20px;
 }
-/* line 42, ../scss/euv_custom_popup.scss */
+/* line 45, ../scss/euv_custom_popup.scss */
 .euv-custom-popup__bg {
   display: none;
   width: 100vw;
